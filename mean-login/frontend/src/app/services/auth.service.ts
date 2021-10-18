@@ -4,13 +4,13 @@ import { UserI } from '../models/user';
 import { JwtResponseI } from '../models/jwt-response';
 import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject, iif } from 'rxjs';
-import { stringify } from 'querystring';
+
 
 
 
 @Injectable()
 export class AuthService {
-  AUTH_SERVER: string = 'https://localhost:4800'
+  AUTH_SERVER: string = 'http://localhost:4800'
   authSubject = new BehaviorSubject(false);
   
   private token: string;
