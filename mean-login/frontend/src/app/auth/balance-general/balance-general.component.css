@@ -1,0 +1,18 @@
+.container{
+    border: 1px solid;
+    border-color: black;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button-container{
+    padding: 8px;
+}
+
+.action-button{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;;
+    border-radius: 10px;
+}
