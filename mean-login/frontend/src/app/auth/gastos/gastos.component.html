@@ -15,14 +15,25 @@
 </div>
 </nav>
 
-<!--Contenido-->
 <div class="container">
-  <h1>Bienvenido a nuestro balance general</h1>
-  <h3>Aquí podrá escoger sus gastos e ingresos fijo de cada mes</h3>
-  <div class="button-container">
-    <button class="action-button btn-dark" type="button" onclick="location.href='http://localhost:4200/auth/ingresos'">Ingresos</button>
-    <button class="action-button btn-dark" type="button" onclick="location.href='http://localhost:4200/auth/gastos'">Gastos</button>
+  <div class="ingresos-container">
+    <h2>Aquí se mostrarán sus ingresos</h2>
+    <p>${{valor}}</p>
   </div>
+  <div class="categorias">
+<select name="categorias">
+  <option value="1">Escoja su categoria...</option>
+   <option value="2">Salario</option> 
+   <option value="3">Premios</option> 
+   <option value="4">Subsidios</option>
+   <option value="5">Cupones</option> 
+   <option value="6">Inversiones</option> 
+   <option value="7">Ahorros</option> 
+</select>
+  </div>
+  <div class="valor">
+    Ingrese el valor de su ingreso: {{ingresos}}
+    <input type="number">
+  </div>
+  <input type="submit" value="Enviar" (click)="enviar()">
 </div>
-
-<p>aquí irá la gráfica</p>
