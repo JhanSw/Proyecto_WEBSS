@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: { value: UserI; }): void{
     this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl('/auth');
+      this.router.navigateByUrl('/auth/balance-general');
     }) 
   }
 }
