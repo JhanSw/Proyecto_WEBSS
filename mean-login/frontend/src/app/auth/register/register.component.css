@@ -3,3 +3,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.text-center{
+    padding: 3%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 

@@ -1,17 +1,15 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand">
-      <img src="frontend/img/logo.png" width="30" height="30" alt="">
+      <img src="https://lh3.googleusercontent.com/OzF0sDQrcyP0Nd2vEgynY70NiqdmvlIK0V29ncoaBzsuXCyccis9uuztRx3bw3_ODJIM9jI=s125" width="120" height="70" alt="">
     </a>
-  <a class="navbar-brand" href="http://localhost:4200/auth/login">TPPTI</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:4200/auth/login">Home <span class="sr-only"></span></a>
-      </li>
+ 
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:4200/auth/login">Iniciar Sesión</a>
       </li>
@@ -23,29 +21,48 @@
   </nav>
 
 <br>
+<div>
 
-<h1 class="title">Bienvenido a TPPTI</h1>
 
-<div class="container">
-  <div class="login">
-    <div class="login-triangle"></div>
-    
-    <h2 class="login-header">Log in</h2>
-  
-    <form #frmLogin= "ngForm" class="login-container" (ngSubmit)= "onLogin(frmLogin)">
-      <p>
-        <input type="email" name="email" placeholder="Email" ngModel required>
-      </p>
-      <p>
-        <input type="password" name="password" placeholder="Password" ngModel required>
-      </p>
-      <p>
-        <input type="submit" value="Send">
-      </p>
+  <div class="izq">
 
-    <label class="text-center"> Aún no tienes cuenta? <a href="http://localhost:4200/auth/register">Regístrate</a></label>
-    </form>
-    
+    <h1 class="titleqn">¿Quienes somos?</h1>
+    <br><br>
+
+  <h3>
+    Somos una página que busca encontrar la forma más sencilla para administrar el dinero de cada persona, 
+    con nuestra página podrás seccionar tus ingresos, llevar control de gastos y así saber cuánto dinero 
+    te queda libre, porque es necesario tener gustos y disfrutar, pero con una economía desorganizada es casi imposible.
+  </h3>
+  </div >
+  <div class="der">
+        <br><br>
+      <h1 class="title">Bienvenido a TPPTI</h1>
+
+      <div class="container">
+        <div class="login">
+          <div class="login-triangle"></div>
+          
+          <h2 class="login-header">Log in</h2>
+        
+          <form #frmLogin= "ngForm" class="login-container" (ngSubmit)= "onLogin(frmLogin)">
+            <p>
+              <input type="email" name="email" placeholder="Email" ngModel required>
+            </p>
+            <p>
+              <input type="password" name="password" placeholder="Password" ngModel required>
+            </p>
+            <p>
+              <input type="submit" value="Send">
+            </p>
+
+          <label class="text-center"> Aún no tienes cuenta? &nbsp; <a href=" http://localhost:4200/auth/register "> Regístrate</a></label>
+          </form>
+          
+        </div>
+        
+      
+
+      </div>
   </div>
-  
 </div>
