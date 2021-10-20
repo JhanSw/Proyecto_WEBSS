@@ -51,18 +51,14 @@
     <button
       class="btn btn-dark"
       type="submit"
-      onclick="valorputo('Formularioingresos.value', 'valor.value')"
+      (click)="visibleInputs=true"
     >
-      Agregar
+      Agregar ingreso
     </button>
+    <button class="btn btn-dark" id="boton-borrar" (click)="visibleInputs=false">Borrar ingreso</button>
   </form>
+  <br>
   Ingresos del usuario:
-  <div id="ingresos">Ingresos...</div>
-  {{ Formularioingresos.value | json }}
+  <div id="ingresos" *ngIf="visibleInputs">{{ Formularioingresos.value | json }}</div>
 </div>
-<script>
-  function valorputo(categoria,valor){
-    var divAgregar = document.getElementById("ingresos");
-    divAgregar.innerText = categoria + ": " + valor
-  }
-</script>
+

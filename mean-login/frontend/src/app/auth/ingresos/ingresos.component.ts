@@ -8,18 +8,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./ingresos.component.css']
 })
 export class IngresosComponent implements OnInit {
-
+  visibleInputs: boolean=false;
   divValor: any;
   constructor() {
   }
 
 
   ngOnInit() {
-  }
-
-  mostrarValor(categoria: string,valor: number){
-    this.divValor = document.getElementById("ingresos");
-    this.divValor.innerText = categoria +': ' + valor;
   }
 
   Formularioingresos = new FormGroup({

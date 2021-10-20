@@ -1,1 +1,1 @@
-# Proyecto_WEBSS
+Somos una página que busca encontrar la forma más sencilla para administrar el dinero de cada persona,  con nuestra página podrás seccionar tus ingresos, llevar control de gastos y así saber cuánto dinero te queda libre, porque es necesario tener gustos y disfrutar, pero con una economía desorganizada es casi imposible.

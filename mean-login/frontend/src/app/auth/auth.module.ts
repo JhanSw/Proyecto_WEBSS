@@ -7,10 +7,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from '../services/auth.service';
 import { IngresosComponent } from './ingresos/ingresos.component';
+import { GastosComponent } from './gastos/gastos.component';
 
 
 @NgModule({
-  declarations: [ RegisterComponent, LoginComponent, IngresosComponent],
+  declarations: [ RegisterComponent, LoginComponent, IngresosComponent, GastosComponent],
   imports: [
 
     CommonModule,

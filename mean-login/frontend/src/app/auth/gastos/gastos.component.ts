@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-gastos',
@@ -6,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gastos.component.css']
 })
 export class GastosComponent implements OnInit {
-  ingresos: number = 0;
-  valor: number = 0;
+  visibleInputs: boolean=false;
   constructor() { }
 
   ngOnInit() {
   }
 
-  enviar(){
-    this.valor = this.ingresos;
-  }
+  Formulariogastos = new FormGroup({
+    categoria: new FormControl('', Validators.required),
+    valor: new FormControl('', Validators.required),
+  });
 
 }

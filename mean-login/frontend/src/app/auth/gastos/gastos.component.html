@@ -18,24 +18,35 @@
 </nav>
 
 <div class="container">
-  <div class="ingresos-container">
-    <h2>Aquí se mostrarán sus gastos</h2>
-    <p>${{valor}}</p>
-  </div>
-  <div class="categorias">
-<select name="categorias">
-  <option value="1">Escoja su categoria...</option>
-   <option value="2">Salario</option> 
-   <option value="3">Premios</option> 
-   <option value="4">Subsidios</option>
-   <option value="5">Cupones</option> 
-   <option value="6">Inversiones</option> 
-   <option value="7">Ahorros</option> 
-</select>
-  </div>
-  <div class="valor">
-    Ingrese el valor de su ingreso: {{ingresos}}
-    <input type="number">
-  </div>
-  <input type="submit" value="Enviar" (click)="enviar()">
+  <h2>Registre sus gastos</h2>
+  <form [formGroup]="Formulariogastos">
+    Escoja su categoria
+    <select
+      name="categorias"
+      class="form-control"
+      formControlName="categoria"
+      placeholder="Escoja su categoria"
+    >
+      <option value="Comida">Comida</option>
+      <option value="Servicios">Servicios</option>
+      <option value="Transporte">Transporte</option>
+      <option value="Salud">Salud</option>
+      <option value="Ropa">Ropa</option>
+      <option value="Entretenimiento">Entretenimiento</option>
+    </select>
+    <br />
+    Ingrese el valor de su gasto:
+    <input type="number" class="form-control" formControlName="valor" /><br />
+    <button
+      class="btn btn-dark"
+      type="submit"
+      (click)="visibleInputs=true"
+    >
+      Agregar gasto
+    </button>
+    <button class="btn btn-dark" id="boton-borrar" (click)="visibleInputs=false">Borrar gasto</button>
+  </form>
+  <br>
+  Gastos del usuario:
+  <div id="gastos" *ngIf="visibleInputs">{{ Formulariogastos.value | json }}</div>
 </div>
