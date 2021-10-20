@@ -1,44 +1,65 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand">
-    <img src="frontend/img/logo.png" width="30" height="30" alt="">
+    <img src="frontend/img/logo.png" width="30" height="30" alt="" />
   </a>
-<a class="navbar-brand" href="http://localhost:4200/auth/login">TPPTI</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="http://localhost:4200/auth/login">Home <span class="sr-only"></span></a>
-    </li>
-  </ul>
-</div>
+  <a class="navbar-brand" href="http://localhost:4200/auth/login">TPPTI</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:4200/auth/login"
+          >Home <span class="sr-only"></span
+        ></a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
-  <div class="ingresos-container">
-    <h2>Aquí se mostrarán sus ingresos</h2>
-    <p>${{valor.value}}</p>
-  </div>
-  <div class="categorias">
-<select name="categorias">
-  <option value="1">Escoja su categoria...</option>
-   <option value="2">Salario</option> 
-   <option value="3">Premios</option> 
-   <option value="4">Subsidios</option>
-   <option value="5">Cupones</option> 
-   <option value="6">Inversiones</option> 
-   <option value="7">Ahorros</option> 
-</select>
-  </div>
-  <div class="valor-class">
+  <h2>Registre sus ingresos</h2>
+  <form [formGroup]="Formularioingresos">
+    Escoja su categoria
+    <select
+      name="categorias"
+      class="form-control"
+      formControlName="categoria"
+      placeholder="Escoja su categoria"
+    >
+      <option value="Salario">Salario</option>
+      <option value="Premios">Premios</option>
+      <option value="Subsidios">Subsidios</option>
+      <option value="Cupones">Cupones</option>
+      <option value="Inversiones">Inversiones</option>
+      <option value="Ahorros">Ahorros</option>
+    </select>
+    <br />
     Ingrese el valor de su ingreso:
-    <input type="number" #valor>
-  </div>
-  <input type="button" value="Agregar" (click)="agregarValor(valor.value)">
-  <div class="resultados">
-    Sus ingresos son:
-    
-  </div>
+    <input type="number" class="form-control" formControlName="valor" /><br />
+    <button
+      class="btn btn-dark"
+      type="submit"
+      onclick="valorputo('Formularioingresos.value', 'valor.value')"
+    >
+      Agregar
+    </button>
+  </form>
+  Ingresos del usuario:
+  <div id="ingresos">Ingresos...</div>
+  {{ Formularioingresos.value | json }}
 </div>
-
+<script>
+  function valorputo(categoria,valor){
+    var divAgregar = document.getElementById("ingresos");
+    divAgregar.innerText = categoria + ": " + valor
+  }
+</script>

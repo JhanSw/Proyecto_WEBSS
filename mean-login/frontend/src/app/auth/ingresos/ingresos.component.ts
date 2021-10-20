@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-ingresos',
   templateUrl: './ingresos.component.html',
@@ -8,8 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class IngresosComponent implements OnInit {
 
-  
-
+  divValor: any;
   constructor() {
   }
 
@@ -17,7 +17,13 @@ export class IngresosComponent implements OnInit {
   ngOnInit() {
   }
 
-  agregarValor(value:string){
-
+  mostrarValor(categoria: string,valor: number){
+    this.divValor = document.getElementById("ingresos");
+    this.divValor.innerText = categoria +': ' + valor;
   }
+
+  Formularioingresos = new FormGroup({
+    categoria: new FormControl('', Validators.required),
+    valor: new FormControl('', Validators.required),
+  });
 }
